@@ -3,8 +3,7 @@ import Link from "next/link"
 
 export const HomePage = ({ data }) => {
     return (
-
-        <main>
+        <>
             {// {data} is same as props.data
         // which is passed from getServerSideProps
         /* 
@@ -16,16 +15,25 @@ export const HomePage = ({ data }) => {
             <h1> {data} </h1>
         }
         */}
-
-            {data.map(city =>
-                <Link key={city.id} href={`events/${city.id}`} legacyBehavior>
-                    <a>
-                        <Image alt={city.id} width={300} height={300} src={city.image} />
-                        <h2>{city.title}</h2>
-                        <p>{city.description}</p>
-                    </a>
-                </Link>
-            )}
-        </main>
+            <div className="home-body">
+                {data.map(city =>
+                    <Link
+                        key={city.id}
+                        legacyBehavior
+                        href={`events/${city.id}`}
+                    >
+                        <a className="card" href={`events/${city.id}`}>
+                            <div className="image">
+                                <Image alt={city.id} width={537} height={358} src={city.image} />
+                            </div>
+                            <div className="content">
+                                <h2>{city.title}</h2>
+                                <p>{city.description}</p>
+                            </div>
+                        </a>
+                    </Link>
+                )}
+            </div>
+        </>
     )
 }

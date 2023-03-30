@@ -1,24 +1,7 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import EventCity from '@/src/components/events/event-city'
 
-const EventCityPage = ({ events, pageName }) => {
-    return (
-        <div>
-            <h1>Events in {pageName}</h1>
-            <div>
-                {events.map(event =>
-                    <Link key={event.title} href={`${event.city}/${event.id}`} legacyBehavior scroll={false}>
-                        <a>
-                            <Image alt={event.title} width={300} height={300} src={event.image} loading='lazy' />
-                            <h2>{event.title}</h2>
-                            <p>{event.description}</p>
-                        </a>
-                    </Link>
-                )}
-            </div>
-        </div >
-    )
-}
+const EventCityPage = ({ events, pageName }) =>
+    <EventCity events={events} pageName={pageName} />
 
 export default EventCityPage
 
