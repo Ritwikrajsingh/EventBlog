@@ -16,7 +16,7 @@ export const Header = () => {
                         </ul>
                     </nav>
                 </div>
-                <h1>de Finibus Bonorum et Malorum</h1></div>
+                <p className='title'>de Finibus Bonorum et Malorum</p></div>
         </header>
     )
 }

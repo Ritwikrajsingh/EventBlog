@@ -1,6 +1,6 @@
 export const Footer = () => (
     <footer>
-        © 2023 Created by:
+        &copy; 2023 Created by:
         <a href="https://github.com/Ritwikrajsingh" target='_blank'>
             {' Ritwik Raj Singh, '}
         </a>
